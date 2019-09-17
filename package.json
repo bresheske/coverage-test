@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "build": "tsc && npm run test",
+    "publish": "tsc && jest | cross-env COVERALLS_SERVICE_NAME=CICD-BUILD COVERALLS_REPO_TOKEN=sAWDb5oQx0bM0WT6pWculYh1CjNlaPqrm coveralls --verbose"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.5",
+    "coveralls": "^3.0.6",
+    "cross-env": "^5.2.1",
     "jest": "^24.9.0",
     "typescript": "^3.6.3"
   }
